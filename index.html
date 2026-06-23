@@ -1,58 +1,148 @@
 <!doctype html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="게임 개발 교육 사이트" />
-    <meta name="author" content="게임 개발 교육 팀" />
-    <meta name="keywords" content="게임 개발, 교육, 튜토리얼" />
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Game Design Portfolio</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="icon" type="image/png" href="./assets/logo/favicon.png">
+  <link rel="apple-touch-icon" href="./assets/logo/apple-touch-icon.png">
+</head>
 
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="XXX의 문서창고" />
-    <meta property="og:title" content="intro" />
-    <meta property="og:description" content="게임 기획서 모음!" />
-    <meta property="og:image" content="./name_seo.png" />
-    <!-- 자신의 홈페이지 주소로 URL을 변경할 것!!! -->
-    <meta property="og:url" content="https://sbsgameacademy01.netlify.app" />
-    <link rel="stylesheet" href="/main.css" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <title>FreeView</title>
-  </head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home"><img src="./assets/logo/portfolio-logo.png" alt="Portfolio Logo"><span>Game Design Portfolio</span></a>
 
-  <body>
-    <div style="position: fixed; z-index: -1; width: 100%; height: 100%">
-           <!-- <iframe
-        width="100%"
-        height="100%"
-        src="https://www.youtube.com/embed/6XGeJwsUP9c?si=xDtyFE08Fcg2meUK&autoplay=1&mute=1&loop=1&playlist=6XGeJwsUP9c"
-        title="YouTube video player"
-        frameborder="0"
-        allow="
-          accelerometer;
-          autoplay;
-          clipboard-write;
-          encrypted-media;
-          gyroscope;
-          picture-in-picture;
-          web-share;
-        "
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen
-      >
-      </iframe> -->
-      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Z36mI9amiX4?si=TBv00zvjvyKQapuH&autoplay=1&mute=1&loop=1&" 
-      title="YouTube video player" frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
-    <div>
-      <a id="portfolio-link" href="/pages/index.html">이수정의 포트폴리오</a>
-    </div>
-  </body>
+    <nav class="nav">
+      <a href="#home">Home</a>
+      <a href="./profile.html">Profile</a>
+      <a href="#escape">Escape:Trauma</a>
+      <a href="#stillborn">The Stillborn Age</a>
+      <a href="#leonardo">레오나르의 날개</a>
+    </nav>
+
+    <div class="kr">KR</div>
+  </header>
+
+  <main>
+    <section class="intro" id="home">
+      
+      <div class="intro-video-layer" aria-hidden="true">
+        <video class="intro-bg-video" autoplay muted loop playsinline preload="auto">
+          <source src="./assets/video/main-bg.webm" type="video/webm">
+          <source src="./assets/video/main-bg.mp4" type="video/mp4">
+        </video>
+        <div class="intro-video-overlay"></div>
+      </div>
+<div>
+        <div class="eyebrow">Game Design</div>
+        <h1 class="main-title">Game Design<br>Portfolio</h1>
+        <p class="sub">게임 기획자 지망생 이수정의 포트폴리오입니다</p>
+      </div>
+
+      <a class="scroll-cue" href="#projects" aria-label="아래 프로젝트 영역으로 스크롤">
+        <span>Scroll</span>
+        <i></i>
+      </a>
+    </section>
+
+    <section class="story" id="projects">
+      <div class="bg-stack">
+        <img class="bg-gray" src="./assets/background/portfolio-bg-gray.jpg" alt="">
+        <img class="bg-color" src="./assets/background/portfolio-bg-color.jpg" alt="">
+        <div class="bg-overlay"></div>
+      </div>
+
+      <div class="scenes">
+        <section id="escape" class="scene">
+          <div class="layout">
+            <section>
+              <div class="kicker">Personal Project</div>
+              <h2 class="project-title">Escape:<br>Trauma</h2>
+              <p class="meta">악몽의 추적에서 도망치는 스릴 넘치는 비대칭 서바이벌</p>
+
+              <div class="actions">
+                <a class="pill" href="./escape-trauma.html">기획안 보러가기</a>
+              </div>
+            </section>
+            <section class="panel has-video video-only" data-video="escape">
+              <div class="video-frame">
+                <iframe
+                  title="Escape:Trauma YouTube video"
+                  src="https://www.youtube.com/embed/2jlXA7jPefU"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen>
+                </iframe>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <section id="stillborn" class="scene">
+          <div class="layout">
+            <section>
+              <div class="kicker">Personal Project</div>
+              <h2 class="project-title">The<br>Stillborn<br>Age</h2>
+              <p class="meta">시간이 붕괴된 잿빛 세상의 색을 되찾아가는 턴제 JRPG</p>
+
+              <div class="actions">
+                <a class="pill" href="./the-stillborn-age.html">기획안 보러가기</a>
+              </div>
+            </section>
+            <section class="panel has-video video-only" data-video="stillborn">
+              <!-- 임시 YouTube 영상: src의 embed/ 뒤 ID만 교체하면 됩니다. 현재 stillborn: M7lc1UVf-VE -->
+              <div class="video-frame">
+                <iframe
+                  title="The Stillborn Age temporary YouTube video"
+                  src="https://www.youtube.com/embed/M7lc1UVf-VE"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen>
+                </iframe>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <section id="leonardo" class="scene leonardo">
+          <div class="airships">
+            <span class="ship s1"></span>
+            <span class="ship s2"></span>
+          </div>
+
+          <div class="layout">
+            <section>
+              <div class="kicker">Team Project</div>
+              <h2 class="project-title">레오나르의<br>날개</h2>
+              <p class="meta">날개를 완성해 하늘로 향하는 스팀펑크 오픈월드 RPG.</p>
+
+              <div class="actions">
+                <a class="pill" href="./leonardo-wing.html">기획안 보러가기</a>
+              </div>
+            </section>
+            <section class="panel has-video video-only" data-video="leonardo">
+              <!-- 임시 YouTube 영상: src의 embed/ 뒤 ID만 교체하면 됩니다. 현재 leonardo: M7lc1UVf-VE -->
+              <div class="video-frame">
+                <iframe
+                  title="레오나르의 날개 temporary YouTube video"
+                  src="https://www.youtube.com/embed/M7lc1UVf-VE"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen>
+                </iframe>
+              </div>
+            </section>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="./assets/js/main.js"></script>
+</body>
 </html>
-
-<!--
- 학대(아이), 정신분열(성인남성), 괴롭힘(여성), 공황장애(남성)
- 
--->
