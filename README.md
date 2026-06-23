@@ -247,3 +247,63 @@ index.html
 <meta property="og:title" content="Game Design Portfolio | 이수정">
 <meta name="twitter:title" content="Game Design Portfolio | 이수정">
 ```
+
+
+## Netlify 기존 주소 기준 SEO 설정
+
+현재 SEO / 공유 미리보기 주소는 아래 기존 Netlify 주소 기준으로 통일되어 있습니다.
+
+```text
+https://soojeong01.netlify.app
+```
+
+메인 공유 제목:
+
+```text
+Game Design Portfolio | 이수정
+```
+
+대표 이미지:
+
+```text
+https://soojeong01.netlify.app/assets/images/og/portfolio-home-preview.jpg
+```
+
+`zettstudio.netlify.app`로 남아 있던 canonical, og:url, og:image, twitter:image는 전부 `soojeong01.netlify.app` 기준으로 수정했습니다.
+
+
+## 최종 링크 미리보기 설정
+
+최종 공유 링크 기준 주소:
+
+```text
+https://soojeong01.netlify.app
+```
+
+공유 제목:
+
+```text
+Game Design Portfolio | 이수정
+```
+
+공유 설명:
+
+```text
+게임 기획 포트폴리오 - 프로젝트, 기획 문서, 프로토타입 영상
+```
+
+공유 이미지:
+
+```text
+https://soojeong01.netlify.app/assets/images/og/portfolio-home-preview.jpg
+```
+
+`index.html`에서 `zettstudio.netlify.app`, `loquacious-frangipane-3e9b5c.netlify.app`로 남아 있던 주소를 전부 `soojeong01.netlify.app` 기준으로 통일했습니다.
+
+배포 전 VS Code 전체 검색에서 아래 값이 남아 있으면 안 됩니다.
+
+```text
+zettstudio
+loquacious-frangipane
+Game Design Portfolio | 게임기획자 포트폴리오
+```
