@@ -1,0 +1,10 @@
+/* reset.css
+   외형 변형을 최소화하기 위해 강한 reset은 적용하지 않고,
+   접근성/정적 사이트 안정성에 필요한 기본값만 둡니다.
+*/
+*,
+*::before,
+*::after{box-sizing:border-box}
+img,video,svg{max-width:100%;display:block}
+button,input,select,textarea{font:inherit}
+:focus-visible{outline:2px solid #d8c29a;outline-offset:4px}
