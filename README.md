@@ -224,3 +224,26 @@ The Stillborn Age → Personal Project / Turn-Based JRPG
 ```
 
 레오나르의 날개는 개인 프로젝트가 아니라 팀 프로젝트이므로 `projects-data.js`와 `leonardo-wing.html`의 표기를 `Team Project`로 통일했습니다.
+
+
+## 검색/공유 제목 설정
+
+메인 페이지의 검색/공유 제목은 아래 형식으로 설정되어 있습니다.
+
+```text
+Game Design Portfolio | 이수정
+```
+
+수정 위치:
+
+```text
+index.html
+```
+
+수정해야 하는 태그:
+
+```html
+<title>Game Design Portfolio | 이수정</title>
+<meta property="og:title" content="Game Design Portfolio | 이수정">
+<meta name="twitter:title" content="Game Design Portfolio | 이수정">
+```

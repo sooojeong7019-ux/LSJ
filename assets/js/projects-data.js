@@ -3,7 +3,7 @@
 */
 window.PORTFOLIO_DATA = {
   "site": {
-    "name": "Game Design Portfolio",
+    "name": "Game Design Portfolio | 이수정",
     "email": "your-email@example.com",
     "keywords": "게임기획 포트폴리오, 게임기획자 취업, Unreal Engine, 레벨디자인, 게임시스템기획, 오픈월드 RPG, 뱀서라이크, 메트로바니아",
     "socials": [
@@ -180,7 +180,7 @@ window.PORTFOLIO_DATA = {
         }
       ],
       "seo": {
-        "title": "Escape:Trauma | Game Design Portfolio",
+        "title": "Escape:Trauma | Game Design Portfolio | 이수정",
         "description": "불안정한 화면 연출과 폐쇄적인 공간 탐험을 중심으로 구성한 탈출형 공포 프로젝트입니다.",
         "ogImage": "./assets/images/og/escape-trauma-og.jpg"
       }
@@ -317,7 +317,7 @@ window.PORTFOLIO_DATA = {
         }
       ],
       "seo": {
-        "title": "The Stillborn Age | Game Design Portfolio",
+        "title": "The Stillborn Age | Game Design Portfolio | 이수정",
         "description": "붕괴한 세계의 복원과 턴제 전투 구조를 중심으로 설계한 개인 JRPG 프로젝트입니다.",
         "ogImage": "./assets/images/og/the-stillborn-age-og.jpg"
       }
@@ -454,7 +454,7 @@ window.PORTFOLIO_DATA = {
         }
       ],
       "seo": {
-        "title": "레오나르의 날개 | Game Design Portfolio",
+        "title": "레오나르의 날개 | Game Design Portfolio | 이수정",
         "description": "거대 비공정 내부 구역과 스팀펑크 오픈월드 구조를 중심으로 설계한 팀 프로젝트 RPG입니다.",
         "ogImage": "./assets/images/og/leonardo-wing-og.jpg"
       }
