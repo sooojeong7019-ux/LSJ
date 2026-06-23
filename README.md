@@ -155,3 +155,47 @@ assets/js/projects-data.js
 ```
 
 필요하면 `assets/js/detail.js`의 `renderDocuments()` 함수에서 다시 표시할 수 있습니다.
+
+
+## 링크 공유 미리보기 이미지 설정
+
+카카오톡, 디스코드, 페이스북, X 같은 공유 미리보기는 화면을 실시간 캡처하지 않고 HTML의 Open Graph 태그를 읽습니다.
+
+현재 대표 이미지는 아래 파일입니다.
+
+```text
+assets/images/og/portfolio-home-preview.jpg
+```
+
+현재 메타 태그는 실제 배포 주소 기준으로 설정되어 있습니다.
+
+```text
+https://zettstudio.netlify.app/assets/images/og/portfolio-home-preview.jpg
+```
+
+배포 주소가 바뀌면 각 HTML 파일의 `og:image`, `twitter:image`, `canonical`, `og:url` 값을 실제 주소로 교체해야 합니다.
+
+이미지를 바꿔도 바로 안 보이면 플랫폼 캐시 때문일 수 있습니다. 이 경우 파일명을 바꾸거나, 배포 후 공유 플랫폼의 캐시 갱신 도구를 사용하세요.
+
+
+## 현재 공유 대표 이미지
+
+공유 대표 이미지는 별도 디자인 카드가 아니라, 메인 상단 배경 영상에서 추출한 정지 프레임입니다.
+
+```text
+assets/images/og/portfolio-home-preview.jpg
+```
+
+메인 배경 영상을 바꾼 뒤 공유 대표 이미지도 맞추려면, 새 영상에서 프레임을 다시 추출해서 위 파일명으로 교체하면 됩니다.
+
+
+## PDF 카드 번호 표시
+
+문서 카드 상단에는 `01`, `02`, `03`처럼 번호만 표시합니다.  
+`/ PDF` 표기는 제거했습니다.
+
+수정 위치:
+
+```text
+assets/js/detail.js
+```
