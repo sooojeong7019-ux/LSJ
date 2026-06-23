@@ -325,9 +325,9 @@ window.PORTFOLIO_DATA = {
     {
       "id": "leonardo-wing",
       "title": "레오나르의 날개",
-      "type": "Personal Project",
+      "type": "Team Project",
       "genre": "Steampunk RPG",
-      "description": "거대 비공정 내부 구역과 스팀펑크 오픈월드 구조를 중심으로 설계한 RPG 프로젝트입니다.",
+      "description": "거대 비공정 내부 구역과 스팀펑크 오픈월드 구조를 중심으로 설계한 팀 프로젝트 RPG입니다.",
       "page": "leonardo-wing.html",
       "anchor": "leonardo",
       "video": {
@@ -455,7 +455,7 @@ window.PORTFOLIO_DATA = {
       ],
       "seo": {
         "title": "레오나르의 날개 | Game Design Portfolio",
-        "description": "거대 비공정 내부 구역과 스팀펑크 오픈월드 구조를 중심으로 설계한 RPG 프로젝트입니다.",
+        "description": "거대 비공정 내부 구역과 스팀펑크 오픈월드 구조를 중심으로 설계한 팀 프로젝트 RPG입니다.",
         "ogImage": "./assets/images/og/leonardo-wing-og.jpg"
       }
     }

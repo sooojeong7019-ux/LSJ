@@ -50,7 +50,7 @@ function renderDocuments(project, category = "all") {
   grid.innerHTML = docs.map((doc) => `
     <article class="doc-card" data-doc-number="${doc.no}" data-doc-type="${doc.category}">
       <div>
-        <div class="doc-no">${doc.no} / PDF</div>
+        <div class="doc-no">${doc.no}</div>
         <h3>${doc.title}</h3>
         <p class="doc-desc">${doc.description}</p>
         <div class="doc-meta">

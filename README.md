@@ -199,3 +199,28 @@ assets/images/og/portfolio-home-preview.jpg
 ```text
 assets/js/detail.js
 ```
+
+
+## PDF 카드 번호 표시 캐시 대응
+
+문서 카드 상단은 `01`, `02`, `03`처럼 번호만 표시합니다.  
+브라우저나 Netlify가 이전 `detail.js`를 캐시해서 `01 / PDF`가 계속 보일 수 있어, 상세 페이지의 script 경로에 버전 쿼리를 붙였습니다.
+
+```html
+<script src="./assets/js/detail.js?v=pdf-number-only-20260624"></script>
+```
+
+배포 후에도 이전 표시가 보이면 브라우저 강력 새로고침을 하거나 Netlify 캐시 삭제 후 다시 배포하세요.
+
+
+## 프로젝트 구분
+
+현재 포트폴리오의 프로젝트 구분은 아래 기준으로 정리되어 있습니다.
+
+```text
+Escape:Trauma → Team Project / Escape Horror
+The Stillborn Age → Personal Project / Turn-Based JRPG
+레오나르의 날개 → Team Project / Steampunk RPG
+```
+
+레오나르의 날개는 개인 프로젝트가 아니라 팀 프로젝트이므로 `projects-data.js`와 `leonardo-wing.html`의 표기를 `Team Project`로 통일했습니다.
