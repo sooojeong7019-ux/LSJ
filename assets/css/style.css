@@ -1222,3 +1222,252 @@ h1,h2{
   .pdf-frame{height:68vh}
   .placeholder-message{min-height:340px}
 }
+
+/* Document List Final Layout */
+.detail-tools,
+.filter-bar{display:none !important;}
+.doc-actions{display:flex;flex-wrap:wrap;gap:8px;}
+.doc-actions .doc-link{min-height:34px;display:inline-flex;align-items:center;justify-content:center;}
+
+/* Simulator Play Card
+   기존 게임 시뮬레이터 영역을 게임 시뮬레이터 실행 영역으로 변경했습니다.
+*/
+.simulator-item .build-meta{
+  margin-bottom:14px;
+}
+
+.simulator-play-button{
+  min-width:96px;
+  min-height:38px;
+}
+
+.simulator-play-button.is-disabled{
+  opacity:.48;
+  cursor:not-allowed;
+  pointer-events:none;
+}
+
+
+/* Final Detail Page Cleanup
+   종류별 필터 제거, 문서 9개 전체 표시, 게임 시뮬레이터 영역 고정.
+*/
+.detail-tools,
+.filter-bar{
+  display:none !important;
+}
+
+.doc-card .doc-desc{
+  display:none;
+}
+
+.doc-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.doc-actions .doc-link,
+.simulator-play-button{
+  min-height:38px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.simulator-card .build-list{
+  padding:0 22px 22px;
+}
+
+.simulator-card .build-item{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+
+.simulator-card .build-meta{
+  display:none;
+}
+
+
+/* Final Data-Driven Detail Page
+   문서 데이터는 projects-data.js에서 관리하고, detail.js가 필터 없이 9개 전체를 렌더링합니다.
+*/
+.detail-tools,
+.filter-bar{
+  display:none !important;
+}
+
+.doc-card .doc-desc{
+  display:none;
+}
+
+.doc-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.doc-actions .doc-link,
+.simulator-play-button{
+  min-height:38px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.simulator-card .build-list{
+  padding:0 22px 22px;
+}
+
+.simulator-card .build-item{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+
+.simulator-card .build-meta{
+  display:none;
+}
+
+
+/* Folder-Based Document Library
+   파트별 폴더 안 파일을 projects-data.js에서 관리하고, detail.js가 카드/미리보기를 생성합니다.
+*/
+.detail-tools,
+.filter-bar{
+  display:none !important;
+}
+
+.folder-doc-card .doc-primary-file{
+  margin:10px 0 0;
+  color:rgba(245,241,232,.58);
+  font-size:12px;
+  line-height:1.45;
+  word-break:break-all;
+}
+
+.folder-doc-card.is-coming-soon{
+  opacity:.86;
+}
+
+.doc-file-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:14px;
+}
+
+.doc-file-chip{
+  max-width:100%;
+  min-height:30px;
+  padding:0 10px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:999px;
+  background:rgba(255,255,255,.045);
+  color:rgba(245,241,232,.62);
+  font-size:12px;
+  cursor:pointer;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.doc-file-chip:hover,
+.doc-file-chip.is-active{
+  color:var(--text);
+  border-color:rgba(216,194,154,.52);
+  background:rgba(216,194,154,.12);
+}
+
+.doc-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.doc-actions .doc-link,
+.simulator-play-button{
+  min-height:38px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.simulator-card .build-list{
+  padding:0 22px 22px;
+}
+
+.simulator-card .build-item{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+
+.simulator-card .build-meta{
+  display:none;
+}
+
+.modal-file-tabs{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  padding:14px 16px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.025);
+}
+
+.modal-file-tab{
+  min-height:32px;
+  padding:0 12px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:999px;
+  background:rgba(255,255,255,.045);
+  color:rgba(245,241,232,.68);
+  font-size:12px;
+  cursor:pointer;
+}
+
+.modal-file-tab:hover,
+.modal-file-tab.is-active{
+  color:var(--text);
+  border-color:rgba(216,194,154,.52);
+  background:rgba(216,194,154,.12);
+}
+
+.modal-preview-stage{
+  min-height:420px;
+}
+
+.image-preview-wrap{
+  width:100%;
+  min-height:70vh;
+  display:grid;
+  place-items:center;
+  padding:22px;
+  background:#111;
+}
+
+.image-preview{
+  max-width:100%;
+  max-height:70vh;
+  object-fit:contain;
+  border-radius:10px;
+}
+
+.text-preview-wrap{
+  min-height:420px;
+  padding:24px;
+  background:#111;
+  color:var(--text);
+  overflow:auto;
+}
+
+.text-preview-wrap pre{
+  margin:0;
+  white-space:pre-wrap;
+  word-break:break-word;
+  line-height:1.7;
+}

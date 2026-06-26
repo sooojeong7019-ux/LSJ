@@ -1,18 +1,10 @@
 /* detail.js
-   프로젝트 상세 페이지 공통 기능입니다.
-   - 문서 카드 렌더링
-   - 문서 카테고리 필터
-   - PDF 미리보기 모달
-   - 새 탭 열기 / 다운로드 placeholder 처리
-   - YouTube 영상 / 빌드 다운로드 카드 렌더링
+   폴더 기반 문서 라이브러리 상세 페이지 기능입니다.
+   - projects-data.js의 documentGroups를 읽어 9개 파트 카드를 표시합니다.
+   - 폴더 안 파일이 여러 개면 번호순으로 정렬된 파일 목록을 표시합니다.
+   - 미리보기 버튼은 대표 파일 또는 선택 파일을 모달에서 보여줍니다.
+   - 비어 있는 폴더는 Coming Soon PDF로 연결합니다.
 */
-function resetScrollPositionOnPageShow() {
-  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
-  window.addEventListener("pageshow", () => {
-    if (!location.hash) window.scrollTo(0, 0);
-  });
-}
-
 function getCurrentProject() {
   const id = document.body.dataset.projectId;
   const data = window.PORTFOLIO_DATA;
@@ -20,121 +12,231 @@ function getCurrentProject() {
   return data.projects.find((project) => project.id === id) || null;
 }
 
-function renderFilters(project) {
-  const filterRoot = document.querySelector("[data-doc-filters]");
-  if (!filterRoot || !window.PORTFOLIO_DATA) return;
-
-  filterRoot.innerHTML = window.PORTFOLIO_DATA.categories.map((category) => `
-    <button class="filter-btn ${category.id === "all" ? "is-active" : ""}" type="button" data-doc-filter="${category.id}">
-      ${category.label}
-    </button>
-  `).join("");
-
-  filterRoot.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-doc-filter]");
-    if (!button) return;
-    filterRoot.querySelectorAll(".filter-btn").forEach((item) => item.classList.remove("is-active"));
-    button.classList.add("is-active");
-    renderDocuments(project, button.dataset.docFilter);
-  });
+function escapeHtml(value) {
+  return String(value || "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;");
 }
 
-function renderDocuments(project, category = "all") {
+function renderProjectHeader(project) {
+  const typeNode = document.querySelector("[data-project-type]");
+  const titleNode = document.querySelector("[data-project-title]");
+  const descNode = document.querySelector("[data-project-description]");
+  if (typeNode) typeNode.textContent = project.type;
+  if (titleNode) titleNode.textContent = project.title;
+  if (descNode) descNode.textContent = project.description;
+}
+
+function getGroups(project) {
+  return project.documentGroups || project.documents || [];
+}
+
+function renderDocuments(project) {
   const grid = document.querySelector("[data-document-grid]");
   if (!grid || !project) return;
+  const groups = getGroups(project);
 
-  const docs = category === "all"
-    ? project.documents
-    : project.documents.filter((doc) => doc.category === category);
+  grid.innerHTML = groups.map((group) => {
+    const files = group.files || [];
+    const primary = group.primaryFile || files[0];
+    const statusText = group.status === "coming-soon" ? "Coming Soon" : `${files.length}개 파일`;
+    const fileList = files.length > 1
+      ? `<div class="doc-file-list">
+          ${files.map((file, index) => `
+            <button class="doc-file-chip ${index === 0 ? "is-active" : ""}" type="button"
+              data-select-file
+              data-group-id="${escapeHtml(group.id)}"
+              data-file-index="${index}">
+              ${escapeHtml(file.fileName)}
+            </button>
+          `).join("")}
+        </div>`
+      : "";
 
-  grid.innerHTML = docs.map((doc) => `
-    <article class="doc-card" data-doc-number="${doc.no}" data-doc-type="${doc.category}">
-      <div>
-        <div class="doc-no">${doc.no}</div>
-        <h3>${doc.title}</h3>
-        <p class="doc-desc">${doc.description}</p>
-        <div class="doc-meta">
-          <span>작성일: ${doc.date}</span>
+    return `
+      <article class="doc-card folder-doc-card ${group.status === "coming-soon" ? "is-coming-soon" : ""}"
+        data-doc-group="${escapeHtml(group.id)}"
+        data-selected-index="0">
+        <div>
+          <div class="doc-no">${escapeHtml(group.no)}</div>
+          <h3>${escapeHtml(group.title)}</h3>
+          <div class="doc-meta">
+            <span>${escapeHtml(group.folderName || group.title)} · ${statusText}</span>
+          </div>
+          ${primary ? `<p class="doc-primary-file">대표 파일: ${escapeHtml(primary.fileName)}</p>` : ""}
+          ${fileList}
         </div>
-      </div>
-      <div class="doc-actions">
-        <button class="doc-link" type="button" data-preview-pdf data-title="${doc.title}" data-path="${doc.path}" data-legacy-path="${doc.legacyPath || ""}">
-          미리보기
-        </button>
-        <a class="doc-link" href="${doc.path}" target="_blank" rel="noopener" data-open-pdf data-legacy-path="${doc.legacyPath || ""}">
-          새 탭 열기
-        </a>
-        <a class="doc-link" href="${doc.path}" download data-download-pdf data-legacy-path="${doc.legacyPath || ""}">
-          다운로드
-        </a>
-      </div>
-    </article>
-  `).join("");
-}
 
-async function resolvePdfPath(path, legacyPath) {
-  const candidates = [path, legacyPath].filter(Boolean);
-  for (const candidate of candidates) {
-    try {
-      const response = await fetch(candidate, { method: "HEAD" });
-      if (response.ok) return { exists: true, path: candidate };
-    } catch (error) {
-      /* Live Server가 아닌 환경에서는 fetch 검사가 실패할 수 있으므로 placeholder로 처리합니다. */
-    }
-  }
-  return { exists: false, path: candidates[0] || "" };
+        <div class="doc-actions">
+          <button class="doc-link" type="button" data-preview-group data-group-id="${escapeHtml(group.id)}">
+            미리보기
+          </button>
+          <a class="doc-link" href="${primary ? escapeHtml(primary.path) : "#"}" target="_blank" rel="noopener" data-open-group data-group-id="${escapeHtml(group.id)}">
+            문서확인
+          </a>
+        </div>
+      </article>
+    `;
+  }).join("");
 }
 
 function renderVideo(project) {
   const root = document.querySelector("[data-project-video]");
   if (!root || !project) return;
   const videoId = project.video.youtubeId || "";
-  const hasVideo = videoId && videoId !== "VIDEO_ID_HERE";
+  const embedUrl = project.video.embedUrl || (videoId ? `https://www.youtube.com/embed/${videoId}` : "");
+  const hasVideo = embedUrl && videoId !== "VIDEO_ID_HERE";
+
   root.innerHTML = `
     <div class="video-preview">
-      ${hasVideo ? `<iframe title="${project.video.title}" src="https://www.youtube.com/embed/${videoId}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>` : `<div class="video-thumb-placeholder">YouTube Video</div>`}
+      ${hasVideo
+        ? `<iframe title="${escapeHtml(project.video.title)}" src="${escapeHtml(embedUrl)}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
+        : `<div class="video-thumb-placeholder">YouTube Video</div>`
+      }
     </div>
     <div class="info-card-body">
-      <h2>${project.video.title}</h2>
-      <p>${project.video.description}</p>
+      <h2>${escapeHtml(project.video.title)}</h2>
+      <p>${escapeHtml(project.video.description)}</p>
     </div>
   `;
 }
 
-function renderBuilds(project) {
-  const root = document.querySelector("[data-build-downloads]");
+function renderSimulator(project) {
+  const root = document.querySelector("[data-project-simulator]");
   if (!root || !project) return;
-  const b = project.build;
+  const simulator = project.simulator || {};
+  const url = simulator.url || "#";
+
   root.innerHTML = `
     <div class="info-card-body">
-      <h2>게임 빌드 다운로드</h2>
-      <p>${b.installGuide}</p>
+      <h2>${escapeHtml(simulator.title || "게임 시뮬레이터")}</h2>
+      <p>${escapeHtml(simulator.description || "시뮬레이터를 실행하는 영역입니다.")}</p>
     </div>
     <div class="build-list">
-      ${b.downloads.map((item) => `
-        <article class="build-item">
-          <h3>${item.platform}</h3>
-          <div class="build-meta">
-            <span>빌드 버전: ${b.version}</span>
-            <span>파일 용량: ${b.size}</span>
-            <span>업데이트: ${b.updatedAt}</span>
-          </div>
-          <a class="doc-link" href="${item.url}" target="_blank" rel="noopener">외부 다운로드 →</a>
-        </article>
-      `).join("")}
+      <article class="build-item simulator-item">
+        <h3>${escapeHtml(simulator.name || "시뮬레이터 플레이")}</h3>
+        <a class="doc-link simulator-play-button" href="${escapeHtml(url)}" target="_blank" rel="noopener">
+          ${escapeHtml(simulator.playLabel || "실행")}
+        </a>
+      </article>
     </div>
   `;
 }
 
-function openPdfModal(title, bodyHtml) {
+function findGroup(project, groupId) {
+  return getGroups(project).find((group) => group.id === groupId);
+}
+
+function getSelectedFile(project, groupId) {
+  const group = findGroup(project, groupId);
+  if (!group) return null;
+  const card = document.querySelector(`[data-doc-group="${CSS.escape(groupId)}"]`);
+  const index = card ? Number(card.dataset.selectedIndex || "0") : 0;
+  const files = group.files || [];
+  return files[index] || group.primaryFile || files[0] || null;
+}
+
+function renderPreviewContent(file) {
+  if (!file) {
+    return `<div class="placeholder-message"><div><strong>파일이 없습니다.</strong></div></div>`;
+  }
+
+  const type = file.type || "file";
+  const path = file.path;
+  const title = escapeHtml(file.title || file.fileName || "문서");
+
+  if (type === "pdf") {
+    return `<iframe class="pdf-frame" src="${escapeHtml(path)}" title="${title} PDF 미리보기"></iframe>`;
+  }
+
+  if (type === "image" || type === "svg") {
+    return `
+      <div class="image-preview-wrap">
+        <img class="image-preview" src="${escapeHtml(path)}" alt="${title}">
+      </div>
+    `;
+  }
+
+  if (type === "text" || type === "markdown") {
+    return `
+      <div class="text-preview-wrap" data-text-preview="${escapeHtml(path)}">
+        <p>텍스트 파일을 불러오는 중입니다.</p>
+      </div>
+    `;
+  }
+
+  if (type === "spreadsheet" || type === "word" || type === "presentation") {
+    return `
+      <div class="placeholder-message">
+        <div>
+          <strong>이 파일 형식은 브라우저 내장 미리보기를 지원하지 않습니다.</strong>
+          <p>문서확인 버튼으로 파일을 열거나 다운로드해 확인해주세요.</p>
+          <p>${escapeHtml(file.fileName || "")}</p>
+        </div>
+      </div>
+    `;
+  }
+
+  return `
+    <div class="placeholder-message">
+      <div>
+        <strong>브라우저 미리보기를 지원하지 않는 파일입니다.</strong>
+        <p>문서확인 버튼으로 파일을 열어주세요.</p>
+        <p>${escapeHtml(file.fileName || "")}</p>
+      </div>
+    </div>
+  `;
+}
+
+async function hydrateTextPreview(container) {
+  const target = container.querySelector("[data-text-preview]");
+  if (!target) return;
+  const path = target.dataset.textPreview;
+  try {
+    const response = await fetch(path);
+    if (!response.ok) throw new Error("load failed");
+    const text = await response.text();
+    target.innerHTML = `<pre>${escapeHtml(text)}</pre>`;
+  } catch (error) {
+    target.innerHTML = `<p>텍스트 파일을 불러올 수 없습니다.</p>`;
+  }
+}
+
+function openPreviewModal(project, groupId) {
+  const group = findGroup(project, groupId);
+  if (!group) return;
+  const selectedFile = getSelectedFile(project, groupId);
+  const files = group.files || [];
   const modal = document.querySelector("[data-pdf-modal]");
   if (!modal) return;
+
+  const fileTabs = files.length > 1
+    ? `<div class="modal-file-tabs">
+        ${files.map((file, index) => `
+          <button class="modal-file-tab ${file === selectedFile ? "is-active" : ""}" type="button"
+            data-modal-select-file
+            data-group-id="${escapeHtml(groupId)}"
+            data-file-index="${index}">
+            ${escapeHtml(file.fileName)}
+          </button>
+        `).join("")}
+      </div>`
+    : "";
+
+  const title = group.status === "coming-soon" ? `${group.title} - Coming Soon` : `${group.title} 미리보기`;
+
   modal.querySelector("[data-modal-title]").textContent = title;
-  modal.querySelector("[data-modal-body]").innerHTML = bodyHtml;
+  modal.querySelector("[data-modal-body]").innerHTML = `
+    ${fileTabs}
+    <div class="modal-preview-stage">
+      ${renderPreviewContent(selectedFile)}
+    </div>
+  `;
   modal.classList.add("is-open");
   document.body.classList.add("modal-open");
-  const closeButton = modal.querySelector("[data-modal-close]");
-  if (closeButton) closeButton.focus();
+  hydrateTextPreview(modal);
 }
 
 function closePdfModal() {
@@ -145,45 +247,39 @@ function closePdfModal() {
   modal.querySelector("[data-modal-body]").innerHTML = "";
 }
 
-function bindPdfActions() {
-  document.addEventListener("click", async (event) => {
-    const preview = event.target.closest("[data-preview-pdf]");
-    if (preview) {
-      const title = preview.dataset.title || "문서 미리보기";
-      const result = await resolvePdfPath(preview.dataset.path, preview.dataset.legacyPath);
-      if (result.exists) {
-        openPdfModal(title, `<iframe class="pdf-frame" src="${result.path}" title="${title} PDF 미리보기"></iframe>`);
-      } else {
-        openPdfModal(title, `
-          <div class="placeholder-message">
-            <div>
-              <strong>PDF 파일이 아직 연결되지 않았습니다.</strong>
-              <p>아래 경로에 실제 PDF를 넣으면 미리보기, 새 탭 열기, 다운로드 기능이 활성화됩니다.</p>
-              <p>${result.path || "등록된 경로 없음"}</p>
-            </div>
-          </div>
-        `);
+function bindDocumentActions(project) {
+  document.addEventListener("click", (event) => {
+    const selectFile = event.target.closest("[data-select-file]");
+    if (selectFile) {
+      const groupId = selectFile.dataset.groupId;
+      const index = selectFile.dataset.fileIndex;
+      const card = document.querySelector(`[data-doc-group="${CSS.escape(groupId)}"]`);
+      if (card) {
+        card.dataset.selectedIndex = index;
+        card.querySelectorAll(".doc-file-chip").forEach((chip) => chip.classList.remove("is-active"));
+        selectFile.classList.add("is-active");
+        const selected = getSelectedFile(project, groupId);
+        const openLink = card.querySelector("[data-open-group]");
+        if (openLink && selected) openLink.href = selected.path;
       }
       return;
     }
 
-    const pdfLink = event.target.closest("[data-open-pdf], [data-download-pdf]");
-    if (pdfLink) {
-      const result = await resolvePdfPath(pdfLink.getAttribute("href"), pdfLink.dataset.legacyPath);
-      if (!result.exists) {
-        event.preventDefault();
-        openPdfModal("문서 준비 중", `
-          <div class="placeholder-message">
-            <div>
-              <strong>PDF 파일이 아직 연결되지 않았습니다.</strong>
-              <p>현재 등록된 경로에 파일이 없어 링크 실행 대신 안내를 표시합니다.</p>
-              <p>${result.path || "등록된 경로 없음"}</p>
-            </div>
-          </div>
-        `);
-      } else if (result.path !== pdfLink.getAttribute("href")) {
-        pdfLink.setAttribute("href", result.path);
-      }
+    const preview = event.target.closest("[data-preview-group]");
+    if (preview) {
+      event.preventDefault();
+      openPreviewModal(project, preview.dataset.groupId);
+      return;
+    }
+
+    const modalSelect = event.target.closest("[data-modal-select-file]");
+    if (modalSelect) {
+      const groupId = modalSelect.dataset.groupId;
+      const index = modalSelect.dataset.fileIndex;
+      const card = document.querySelector(`[data-doc-group="${CSS.escape(groupId)}"]`);
+      if (card) card.dataset.selectedIndex = index;
+      openPreviewModal(project, groupId);
+      return;
     }
   });
 
@@ -200,14 +296,14 @@ function bindPdfActions() {
 }
 
 function initDetailPage() {
-  resetScrollPositionOnPageShow();
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
   const project = getCurrentProject();
   if (!project) return;
-  renderFilters(project);
+  renderProjectHeader(project);
   renderDocuments(project);
   renderVideo(project);
-  renderBuilds(project);
-  bindPdfActions();
+  renderSimulator(project);
+  bindDocumentActions(project);
 }
 
 initDetailPage();
