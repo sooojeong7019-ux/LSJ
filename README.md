@@ -76,14 +76,14 @@ window.PORTFOLIO_DATA.projects[].video.youtubeId
 
 YouTube 전체 URL이 아니라 `embed/` 뒤에 들어가는 Video ID만 넣으면 됩니다.
 
-## 게임 빌드 다운로드 링크 교체 방법
+## 게임 시뮬레이터 링크 교체 방법
 
 빌드 파일은 웹사이트 폴더에 직접 포함하지 않습니다. 외부 URL만 연결합니다.
 
 수정 위치:
 
 ```js
-window.PORTFOLIO_DATA.projects[].build.downloads[].url
+window.PORTFOLIO_DATA.projects[].simulator.url[].url
 ```
 
 ## favicon 교체 방법
@@ -125,7 +125,7 @@ assets/images/og/leonardo-wing-og.jpg
 - [ ] `assets/js/projects-data.js`의 프로젝트 설명 확인
 - [ ] YouTube Video ID 교체
 - [ ] PDF 파일 경로 확인
-- [ ] 외부 빌드 다운로드 URL 교체
+- [ ] 외부 시뮬레이터 실행 URL 교체
 - [ ] favicon 확인
 - [ ] Open Graph 이미지 확인
 - [ ] `sitemap.xml` URL 수정
@@ -306,4 +306,187 @@ https://soojeong01.netlify.app/assets/images/og/portfolio-home-preview.jpg
 zettstudio
 loquacious-frangipane
 Game Design Portfolio | 게임기획자 포트폴리오
+```
+
+
+## 문서 카드 최종 구성
+
+각 프로젝트 상세 페이지는 문서 종류별 필터 없이 해당 프로젝트의 문서 9개를 한 번에 표시합니다.
+
+문서 9종:
+
+```text
+01 개발제안서
+02 게임스토리&게임시나리오
+03 캐릭터컨셉기획서
+04 배경컨셉기획서
+05 게임메카닉스기획서
+06 게임콘텐츠시스템기획서
+07 레벨디자인기획서
+08 게임UI디자인기획서
+09 게임서비스기획서
+```
+
+각 카드 버튼은 `미리보기`, `문서확인`만 표시합니다.
+
+프로젝트 구분:
+
+```text
+Escape:Trauma → Personal Project
+The Stillborn Age → Personal Project
+레오나르의 날개 → Team Project
+```
+
+
+## 게임 시뮬레이터 실행 영역
+
+상세 페이지의 실행 영역은 `게임 시뮬레이터`로 표시됩니다.
+
+현재 표시 구조:
+
+```text
+게임 시뮬레이터
+시뮬레이터 플레이
+실행
+```
+
+수정 위치:
+
+```text
+assets/js/projects-data.js
+```
+
+프로젝트별 실행 링크는 아래 항목에서 수정합니다.
+
+```js
+projects[].simulator.url
+```
+
+현재 The Stillborn Age는 아래 시뮬레이터 링크가 연결되어 있습니다.
+
+```text
+https://stillbornage001.netlify.app/
+```
+
+Escape:Trauma와 레오나르의 날개는 실제 시뮬레이터 URL을 넣으면 `실행` 버튼이 활성화됩니다.
+
+
+## 최종 상세 페이지 구성
+
+상세 페이지는 이제 JS 데이터 렌더링이 아니라 HTML 안에 문서 카드 9개가 직접 배치되어 있습니다.  
+이전 브라우저 캐시가 남아 있어도 기존 필터/다운로드 영역이 다시 그려지지 않도록 `data-document-grid`, `data-build-downloads` 구조를 제거했습니다.
+
+문서 카드 버튼:
+
+```text
+미리보기
+문서확인
+```
+
+시뮬레이터 영역:
+
+```text
+게임 시뮬레이터
+시뮬레이터 플레이
+실행
+```
+
+The Stillborn Age 실행 링크:
+
+```text
+https://stillbornage001.netlify.app/
+```
+
+
+## 최종 상세 페이지 데이터 구조
+
+초기 요구사항과 현재 화면 요구사항을 함께 맞춘 구조입니다.
+
+```text
+assets/js/projects-data.js
+→ 문서명, 설명, 파일 경로, 작성일, 버전, 프로젝트 구분, 시뮬레이터 URL 관리
+
+assets/js/detail.js
+→ projects-data.js를 읽어서 각 프로젝트 상세 페이지에 문서 카드 9개 전체 렌더링
+```
+
+화면 구성:
+
+```text
+문서 종류 필터 없음
+프로젝트별 상세 페이지에서 문서 9개 전체 표시
+카드 버튼은 미리보기 / 문서확인만 표시
+게임 빌드 다운로드 없음
+Windows / Android 구분 없음
+게임 시뮬레이터 / 시뮬레이터 플레이 / 실행만 표시
+```
+
+The Stillborn Age 시뮬레이터 링크:
+
+```text
+https://stillbornage001.netlify.app/
+```
+
+
+## 폴더 기반 문서 라이브러리
+
+각 프로젝트의 문서는 `assets/pdf/<프로젝트>/<파트 폴더>/` 기준으로 관리합니다.  
+PDF뿐 아니라 SVG, PNG, JPG, WEBP, TXT, MD 파일도 등록됩니다.
+
+처리 규칙:
+
+```text
+0개 파일 → Coming Soon 처리 + assets/pdf/_common/coming-soon.pdf 연결
+1개 파일 → 그 파일을 그대로 대표 파일로 사용
+2개 이상 파일 → 파일명 앞 번호 기준으로 정렬하고 1번 파일을 대표 미리보기로 사용
+```
+
+파트 폴더:
+
+```text
+개발제안서
+게임스토리&시나리오
+캐릭터컨셉기획서
+배경컨셉기획서
+게임메카닉스기획서
+게임콘텐츠시스템기획서
+레벨디자인기획서
+게임UI디자인기획서
+게임서비스기획서
+```
+
+예시:
+
+```text
+assets/pdf/the-stillborn-age/개발제안서/
+├── 1.The Stillborn Age 개발제안서.pdf
+├── 2.The Stillborn Age 게임 소개.pdf
+└── 3.원페이지 기획서.svg
+```
+
+이 경우 `1.` 파일이 대표 미리보기로 설정되고, 미리보기 모달 안에서 나머지 파일도 선택해 확인할 수 있습니다.
+
+
+## 파일 재스캔 반영
+
+업로드된 `assets/pdf` 폴더 기준으로 `assets/js/projects-data.js`를 다시 생성했습니다.
+
+추가 반영된 폴더 별칭:
+
+```text
+레벨기획서 → 레벨디자인기획서 카드로 표시
+게임UI기획서 → 게임UI디자인기획서 카드로 표시
+```
+
+지원 파일 확장자:
+
+```text
+PDF, SVG, PNG, JPG, WEBP, GIF, TXT, MD, XLSX, XLS, CSV, DOCX, DOC, PPTX, PPT
+```
+
+브라우저 내장 미리보기:
+
+```text
+PDF / SVG / PNG / JPG / WEBP / GIF / TXT / MD 가능
+XLSX / DOCX / PPTX 계열은 문서확인으로 열거나 다운로드해서 확인
 ```
