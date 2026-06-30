@@ -1,6 +1,6 @@
 /* projects-data.js
    폴더 기반 문서 라이브러리 데이터입니다.
-   - 각 프로젝트의 9개 파트별 폴더를 기준으로 파일 목록을 관리합니다.
+   - 실제 assets/pdf 및 assets/documents 폴더를 다시 스캔해 반영했습니다.
    - 빈 폴더는 공통 Coming Soon PDF로 연결합니다.
    - 여러 파일이 있으면 파일명 앞 번호 기준으로 정렬하고, 1번 파일을 대표 미리보기로 사용합니다.
    - 단일 파일은 그대로 대표 파일로 사용합니다.
@@ -57,6 +57,7 @@ window.PORTFOLIO_DATA = {
           "folderName": "개발제안서",
           "folderAliases": [
             "개발제안서",
+            "개발 제안서",
             "proposal"
           ],
           "sourceFolders": [],
@@ -87,8 +88,11 @@ window.PORTFOLIO_DATA = {
           "folderAliases": [
             "게임스토리&시나리오",
             "게임스토리&게임시나리오",
+            "게임 스토리&시나리오",
+            "스토리&시나리오",
             "시나리오",
-            "scenario"
+            "scenario",
+            "story-scenario"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -117,8 +121,11 @@ window.PORTFOLIO_DATA = {
           "folderName": "캐릭터컨셉기획서",
           "folderAliases": [
             "캐릭터컨셉기획서",
+            "캐릭터 컨셉 기획서",
             "캐릭터컨셉",
-            "character"
+            "캐릭터 컨셉",
+            "character",
+            "character-concept"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -147,8 +154,11 @@ window.PORTFOLIO_DATA = {
           "folderName": "배경컨셉기획서",
           "folderAliases": [
             "배경컨셉기획서",
+            "배경 컨셉 기획서",
             "배경컨셉",
-            "background"
+            "배경 컨셉",
+            "background",
+            "background-concept"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -177,8 +187,11 @@ window.PORTFOLIO_DATA = {
           "folderName": "게임메카닉스기획서",
           "folderAliases": [
             "게임메카닉스기획서",
+            "게임 메카닉스 기획서",
             "게임메카닉스",
-            "mechanics"
+            "메카닉스",
+            "mechanics",
+            "game-mechanics"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -207,9 +220,13 @@ window.PORTFOLIO_DATA = {
           "folderName": "게임콘텐츠시스템기획서",
           "folderAliases": [
             "게임콘텐츠시스템기획서",
+            "게임 콘텐츠 시스템 기획서",
             "콘텐츠시스템기획서",
+            "콘텐츠 시스템 기획서",
             "콘텐츠시스템",
-            "contents-system"
+            "콘텐츠 시스템",
+            "contents-system",
+            "game-contents-system"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -238,9 +255,13 @@ window.PORTFOLIO_DATA = {
           "folderName": "레벨디자인기획서",
           "folderAliases": [
             "레벨디자인기획서",
+            "레벨 디자인 기획서",
             "레벨기획서",
+            "레벨 기획서",
             "레벨디자인",
-            "level-design"
+            "레벨 디자인",
+            "level-design",
+            "level"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -269,10 +290,15 @@ window.PORTFOLIO_DATA = {
           "folderName": "게임UI디자인기획서",
           "folderAliases": [
             "게임UI디자인기획서",
+            "게임 UI 디자인 기획서",
             "게임UI기획서",
+            "게임 UI 기획서",
             "UI디자인기획서",
+            "UI 디자인 기획서",
             "UI기획서",
-            "ui-design"
+            "UI 기획서",
+            "ui-design",
+            "ui"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -301,8 +327,11 @@ window.PORTFOLIO_DATA = {
           "folderName": "게임서비스기획서",
           "folderAliases": [
             "게임서비스기획서",
+            "게임 서비스 기획서",
             "서비스기획서",
-            "service-plan"
+            "서비스 기획서",
+            "service-plan",
+            "service"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -333,6 +362,7 @@ window.PORTFOLIO_DATA = {
           "folderName": "개발제안서",
           "folderAliases": [
             "개발제안서",
+            "개발 제안서",
             "proposal"
           ],
           "sourceFolders": [],
@@ -363,8 +393,11 @@ window.PORTFOLIO_DATA = {
           "folderAliases": [
             "게임스토리&시나리오",
             "게임스토리&게임시나리오",
+            "게임 스토리&시나리오",
+            "스토리&시나리오",
             "시나리오",
-            "scenario"
+            "scenario",
+            "story-scenario"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -393,8 +426,11 @@ window.PORTFOLIO_DATA = {
           "folderName": "캐릭터컨셉기획서",
           "folderAliases": [
             "캐릭터컨셉기획서",
+            "캐릭터 컨셉 기획서",
             "캐릭터컨셉",
-            "character"
+            "캐릭터 컨셉",
+            "character",
+            "character-concept"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -423,8 +459,11 @@ window.PORTFOLIO_DATA = {
           "folderName": "배경컨셉기획서",
           "folderAliases": [
             "배경컨셉기획서",
+            "배경 컨셉 기획서",
             "배경컨셉",
-            "background"
+            "배경 컨셉",
+            "background",
+            "background-concept"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -453,8 +492,11 @@ window.PORTFOLIO_DATA = {
           "folderName": "게임메카닉스기획서",
           "folderAliases": [
             "게임메카닉스기획서",
+            "게임 메카닉스 기획서",
             "게임메카닉스",
-            "mechanics"
+            "메카닉스",
+            "mechanics",
+            "game-mechanics"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -483,9 +525,13 @@ window.PORTFOLIO_DATA = {
           "folderName": "게임콘텐츠시스템기획서",
           "folderAliases": [
             "게임콘텐츠시스템기획서",
+            "게임 콘텐츠 시스템 기획서",
             "콘텐츠시스템기획서",
+            "콘텐츠 시스템 기획서",
             "콘텐츠시스템",
-            "contents-system"
+            "콘텐츠 시스템",
+            "contents-system",
+            "game-contents-system"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -514,9 +560,13 @@ window.PORTFOLIO_DATA = {
           "folderName": "레벨디자인기획서",
           "folderAliases": [
             "레벨디자인기획서",
+            "레벨 디자인 기획서",
             "레벨기획서",
+            "레벨 기획서",
             "레벨디자인",
-            "level-design"
+            "레벨 디자인",
+            "level-design",
+            "level"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -545,10 +595,15 @@ window.PORTFOLIO_DATA = {
           "folderName": "게임UI디자인기획서",
           "folderAliases": [
             "게임UI디자인기획서",
+            "게임 UI 디자인 기획서",
             "게임UI기획서",
+            "게임 UI 기획서",
             "UI디자인기획서",
+            "UI 디자인 기획서",
             "UI기획서",
-            "ui-design"
+            "UI 기획서",
+            "ui-design",
+            "ui"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -577,8 +632,11 @@ window.PORTFOLIO_DATA = {
           "folderName": "게임서비스기획서",
           "folderAliases": [
             "게임서비스기획서",
+            "게임 서비스 기획서",
             "서비스기획서",
-            "service-plan"
+            "서비스 기획서",
+            "service-plan",
+            "service"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -635,6 +693,7 @@ window.PORTFOLIO_DATA = {
           "folderName": "개발제안서",
           "folderAliases": [
             "개발제안서",
+            "개발 제안서",
             "proposal"
           ],
           "sourceFolders": [
@@ -642,36 +701,43 @@ window.PORTFOLIO_DATA = {
           ],
           "status": "available",
           "primaryFile": {
-            "title": "The Stillborn Age 개발제안서",
-            "fileName": "1.The Stillborn Age 개발제안서.pdf",
-            "path": "./assets/pdf/the-stillborn-age/개발제안서/1.The Stillborn Age 개발제안서.pdf",
+            "title": "TSA_개발제안서_PPT",
+            "fileName": "1.TSA_개발제안서_PPT.pdf",
+            "path": "./assets/pdf/the-stillborn-age/개발제안서/1.TSA_개발제안서_PPT.pdf",
             "type": "pdf",
             "isPrimary": true
           },
           "files": [
             {
-              "title": "The Stillborn Age 개발제안서",
-              "fileName": "1.The Stillborn Age 개발제안서.pdf",
-              "path": "./assets/pdf/the-stillborn-age/개발제안서/1.The Stillborn Age 개발제안서.pdf",
+              "title": "TSA_개발제안서_PPT",
+              "fileName": "1.TSA_개발제안서_PPT.pdf",
+              "path": "./assets/pdf/the-stillborn-age/개발제안서/1.TSA_개발제안서_PPT.pdf",
               "type": "pdf",
               "isPrimary": true
             },
             {
+              "title": "TSA_개발제안서",
+              "fileName": "2.TSA_개발제안서.pdf",
+              "path": "./assets/pdf/the-stillborn-age/개발제안서/2.TSA_개발제안서.pdf",
+              "type": "pdf",
+              "isPrimary": false
+            },
+            {
               "title": "The Stillborn Age 게임 소개",
-              "fileName": "2.The Stillborn Age 게임 소개.pdf",
-              "path": "./assets/pdf/the-stillborn-age/개발제안서/2.The Stillborn Age 게임 소개.pdf",
+              "fileName": "3.The Stillborn Age 게임 소개.pdf",
+              "path": "./assets/pdf/the-stillborn-age/개발제안서/3.The Stillborn Age 게임 소개.pdf",
               "type": "pdf",
               "isPrimary": false
             },
             {
               "title": "원페이지 기획서",
-              "fileName": "3.원페이지 기획서.svg",
-              "path": "./assets/pdf/the-stillborn-age/개발제안서/3.원페이지 기획서.svg",
+              "fileName": "4.원페이지 기획서.svg",
+              "path": "./assets/pdf/the-stillborn-age/개발제안서/4.원페이지 기획서.svg",
               "type": "svg",
               "isPrimary": false
             }
           ],
-          "fileCount": 3
+          "fileCount": 4
         },
         {
           "no": "02",
@@ -681,8 +747,11 @@ window.PORTFOLIO_DATA = {
           "folderAliases": [
             "게임스토리&시나리오",
             "게임스토리&게임시나리오",
+            "게임 스토리&시나리오",
+            "스토리&시나리오",
             "시나리오",
-            "scenario"
+            "scenario",
+            "story-scenario"
           ],
           "sourceFolders": [
             "./assets/pdf/the-stillborn-age/게임스토리&시나리오"
@@ -720,8 +789,11 @@ window.PORTFOLIO_DATA = {
           "folderName": "캐릭터컨셉기획서",
           "folderAliases": [
             "캐릭터컨셉기획서",
+            "캐릭터 컨셉 기획서",
             "캐릭터컨셉",
-            "character"
+            "캐릭터 컨셉",
+            "character",
+            "character-concept"
           ],
           "sourceFolders": [
             "./assets/pdf/the-stillborn-age/캐릭터컨셉기획서"
@@ -752,8 +824,11 @@ window.PORTFOLIO_DATA = {
           "folderName": "배경컨셉기획서",
           "folderAliases": [
             "배경컨셉기획서",
+            "배경 컨셉 기획서",
             "배경컨셉",
-            "background"
+            "배경 컨셉",
+            "background",
+            "background-concept"
           ],
           "sourceFolders": [
             "./assets/pdf/the-stillborn-age/배경컨셉기획서"
@@ -784,8 +859,11 @@ window.PORTFOLIO_DATA = {
           "folderName": "게임메카닉스기획서",
           "folderAliases": [
             "게임메카닉스기획서",
+            "게임 메카닉스 기획서",
             "게임메카닉스",
-            "mechanics"
+            "메카닉스",
+            "mechanics",
+            "game-mechanics"
           ],
           "sourceFolders": [
             "./assets/pdf/the-stillborn-age/게임메카닉스기획서"
@@ -816,9 +894,13 @@ window.PORTFOLIO_DATA = {
           "folderName": "게임콘텐츠시스템기획서",
           "folderAliases": [
             "게임콘텐츠시스템기획서",
+            "게임 콘텐츠 시스템 기획서",
             "콘텐츠시스템기획서",
+            "콘텐츠 시스템 기획서",
             "콘텐츠시스템",
-            "contents-system"
+            "콘텐츠 시스템",
+            "contents-system",
+            "game-contents-system"
           ],
           "sourceFolders": [
             "./assets/pdf/the-stillborn-age/게임콘텐츠시스템기획서"
@@ -826,21 +908,28 @@ window.PORTFOLIO_DATA = {
           "status": "available",
           "primaryFile": {
             "title": "콘텐츠맵2",
-            "fileName": "콘텐츠맵2.svg",
-            "path": "./assets/pdf/the-stillborn-age/게임콘텐츠시스템기획서/콘텐츠맵2.svg",
+            "fileName": "1.콘텐츠맵2.svg",
+            "path": "./assets/pdf/the-stillborn-age/게임콘텐츠시스템기획서/1.콘텐츠맵2.svg",
             "type": "svg",
             "isPrimary": true
           },
           "files": [
             {
               "title": "콘텐츠맵2",
-              "fileName": "콘텐츠맵2.svg",
-              "path": "./assets/pdf/the-stillborn-age/게임콘텐츠시스템기획서/콘텐츠맵2.svg",
+              "fileName": "1.콘텐츠맵2.svg",
+              "path": "./assets/pdf/the-stillborn-age/게임콘텐츠시스템기획서/1.콘텐츠맵2.svg",
               "type": "svg",
               "isPrimary": true
+            },
+            {
+              "title": "TSA_콘텐츠기획",
+              "fileName": "2.TSA_콘텐츠기획.pdf",
+              "path": "./assets/pdf/the-stillborn-age/게임콘텐츠시스템기획서/2.TSA_콘텐츠기획.pdf",
+              "type": "pdf",
+              "isPrimary": false
             }
           ],
-          "fileCount": 1
+          "fileCount": 2
         },
         {
           "no": "07",
@@ -849,9 +938,13 @@ window.PORTFOLIO_DATA = {
           "folderName": "레벨디자인기획서",
           "folderAliases": [
             "레벨디자인기획서",
+            "레벨 디자인 기획서",
             "레벨기획서",
+            "레벨 기획서",
             "레벨디자인",
-            "level-design"
+            "레벨 디자인",
+            "level-design",
+            "level"
           ],
           "sourceFolders": [
             "./assets/pdf/the-stillborn-age/레벨기획서"
@@ -878,9 +971,30 @@ window.PORTFOLIO_DATA = {
               "path": "./assets/pdf/the-stillborn-age/레벨기획서/2.TSA_전체_레벨_레이아웃.xlsx",
               "type": "spreadsheet",
               "isPrimary": false
+            },
+            {
+              "title": "TSA_02_레벨_디자인_문서",
+              "fileName": "3.TSA_02_레벨_디자인_문서.pdf",
+              "path": "./assets/pdf/the-stillborn-age/레벨기획서/3.TSA_02_레벨_디자인_문서.pdf",
+              "type": "pdf",
+              "isPrimary": false
+            },
+            {
+              "title": "TSA_03_테스트_플레이_시나리오",
+              "fileName": "4.TSA_03_테스트_플레이_시나리오.pdf",
+              "path": "./assets/pdf/the-stillborn-age/레벨기획서/4.TSA_03_테스트_플레이_시나리오.pdf",
+              "type": "pdf",
+              "isPrimary": false
+            },
+            {
+              "title": "TSA_04_레벨_분석서",
+              "fileName": "5.TSA_04_레벨_분석서.pdf",
+              "path": "./assets/pdf/the-stillborn-age/레벨기획서/5.TSA_04_레벨_분석서.pdf",
+              "type": "pdf",
+              "isPrimary": false
             }
           ],
-          "fileCount": 2
+          "fileCount": 5
         },
         {
           "no": "08",
@@ -889,27 +1003,32 @@ window.PORTFOLIO_DATA = {
           "folderName": "게임UI디자인기획서",
           "folderAliases": [
             "게임UI디자인기획서",
+            "게임 UI 디자인 기획서",
             "게임UI기획서",
+            "게임 UI 기획서",
             "UI디자인기획서",
+            "UI 디자인 기획서",
             "UI기획서",
-            "ui-design"
+            "UI 기획서",
+            "ui-design",
+            "ui"
           ],
           "sourceFolders": [
             "./assets/pdf/the-stillborn-age/게임UI기획서"
           ],
           "status": "available",
           "primaryFile": {
-            "title": "TSA_UI기획",
-            "fileName": "TSA_UI기획.pdf",
-            "path": "./assets/pdf/the-stillborn-age/게임UI기획서/TSA_UI기획.pdf",
+            "title": "TSA_UI기획서",
+            "fileName": "TSA_UI기획서.pdf",
+            "path": "./assets/pdf/the-stillborn-age/게임UI기획서/TSA_UI기획서.pdf",
             "type": "pdf",
             "isPrimary": true
           },
           "files": [
             {
-              "title": "TSA_UI기획",
-              "fileName": "TSA_UI기획.pdf",
-              "path": "./assets/pdf/the-stillborn-age/게임UI기획서/TSA_UI기획.pdf",
+              "title": "TSA_UI기획서",
+              "fileName": "TSA_UI기획서.pdf",
+              "path": "./assets/pdf/the-stillborn-age/게임UI기획서/TSA_UI기획서.pdf",
               "type": "pdf",
               "isPrimary": true
             }
@@ -923,28 +1042,33 @@ window.PORTFOLIO_DATA = {
           "folderName": "게임서비스기획서",
           "folderAliases": [
             "게임서비스기획서",
+            "게임 서비스 기획서",
             "서비스기획서",
-            "service-plan"
+            "서비스 기획서",
+            "service-plan",
+            "service"
           ],
-          "sourceFolders": [],
-          "status": "coming-soon",
+          "sourceFolders": [
+            "./assets/pdf/the-stillborn-age/게임서비스기획서"
+          ],
+          "status": "available",
           "primaryFile": {
-            "title": "Coming Soon",
-            "fileName": "coming-soon.pdf",
-            "path": "./assets/pdf/_common/coming-soon.pdf",
+            "title": "TSA_서비스기획",
+            "fileName": "TSA_서비스기획.pdf",
+            "path": "./assets/pdf/the-stillborn-age/게임서비스기획서/TSA_서비스기획.pdf",
             "type": "pdf",
-            "isPlaceholder": true
+            "isPrimary": true
           },
           "files": [
             {
-              "title": "Coming Soon",
-              "fileName": "coming-soon.pdf",
-              "path": "./assets/pdf/_common/coming-soon.pdf",
+              "title": "TSA_서비스기획",
+              "fileName": "TSA_서비스기획.pdf",
+              "path": "./assets/pdf/the-stillborn-age/게임서비스기획서/TSA_서비스기획.pdf",
               "type": "pdf",
-              "isPlaceholder": true
+              "isPrimary": true
             }
           ],
-          "fileCount": 0
+          "fileCount": 1
         }
       ],
       "documents": [
@@ -955,6 +1079,7 @@ window.PORTFOLIO_DATA = {
           "folderName": "개발제안서",
           "folderAliases": [
             "개발제안서",
+            "개발 제안서",
             "proposal"
           ],
           "sourceFolders": [
@@ -962,36 +1087,43 @@ window.PORTFOLIO_DATA = {
           ],
           "status": "available",
           "primaryFile": {
-            "title": "The Stillborn Age 개발제안서",
-            "fileName": "1.The Stillborn Age 개발제안서.pdf",
-            "path": "./assets/pdf/the-stillborn-age/개발제안서/1.The Stillborn Age 개발제안서.pdf",
+            "title": "TSA_개발제안서_PPT",
+            "fileName": "1.TSA_개발제안서_PPT.pdf",
+            "path": "./assets/pdf/the-stillborn-age/개발제안서/1.TSA_개발제안서_PPT.pdf",
             "type": "pdf",
             "isPrimary": true
           },
           "files": [
             {
-              "title": "The Stillborn Age 개발제안서",
-              "fileName": "1.The Stillborn Age 개발제안서.pdf",
-              "path": "./assets/pdf/the-stillborn-age/개발제안서/1.The Stillborn Age 개발제안서.pdf",
+              "title": "TSA_개발제안서_PPT",
+              "fileName": "1.TSA_개발제안서_PPT.pdf",
+              "path": "./assets/pdf/the-stillborn-age/개발제안서/1.TSA_개발제안서_PPT.pdf",
               "type": "pdf",
               "isPrimary": true
             },
             {
+              "title": "TSA_개발제안서",
+              "fileName": "2.TSA_개발제안서.pdf",
+              "path": "./assets/pdf/the-stillborn-age/개발제안서/2.TSA_개발제안서.pdf",
+              "type": "pdf",
+              "isPrimary": false
+            },
+            {
               "title": "The Stillborn Age 게임 소개",
-              "fileName": "2.The Stillborn Age 게임 소개.pdf",
-              "path": "./assets/pdf/the-stillborn-age/개발제안서/2.The Stillborn Age 게임 소개.pdf",
+              "fileName": "3.The Stillborn Age 게임 소개.pdf",
+              "path": "./assets/pdf/the-stillborn-age/개발제안서/3.The Stillborn Age 게임 소개.pdf",
               "type": "pdf",
               "isPrimary": false
             },
             {
               "title": "원페이지 기획서",
-              "fileName": "3.원페이지 기획서.svg",
-              "path": "./assets/pdf/the-stillborn-age/개발제안서/3.원페이지 기획서.svg",
+              "fileName": "4.원페이지 기획서.svg",
+              "path": "./assets/pdf/the-stillborn-age/개발제안서/4.원페이지 기획서.svg",
               "type": "svg",
               "isPrimary": false
             }
           ],
-          "fileCount": 3
+          "fileCount": 4
         },
         {
           "no": "02",
@@ -1001,8 +1133,11 @@ window.PORTFOLIO_DATA = {
           "folderAliases": [
             "게임스토리&시나리오",
             "게임스토리&게임시나리오",
+            "게임 스토리&시나리오",
+            "스토리&시나리오",
             "시나리오",
-            "scenario"
+            "scenario",
+            "story-scenario"
           ],
           "sourceFolders": [
             "./assets/pdf/the-stillborn-age/게임스토리&시나리오"
@@ -1040,8 +1175,11 @@ window.PORTFOLIO_DATA = {
           "folderName": "캐릭터컨셉기획서",
           "folderAliases": [
             "캐릭터컨셉기획서",
+            "캐릭터 컨셉 기획서",
             "캐릭터컨셉",
-            "character"
+            "캐릭터 컨셉",
+            "character",
+            "character-concept"
           ],
           "sourceFolders": [
             "./assets/pdf/the-stillborn-age/캐릭터컨셉기획서"
@@ -1072,8 +1210,11 @@ window.PORTFOLIO_DATA = {
           "folderName": "배경컨셉기획서",
           "folderAliases": [
             "배경컨셉기획서",
+            "배경 컨셉 기획서",
             "배경컨셉",
-            "background"
+            "배경 컨셉",
+            "background",
+            "background-concept"
           ],
           "sourceFolders": [
             "./assets/pdf/the-stillborn-age/배경컨셉기획서"
@@ -1104,8 +1245,11 @@ window.PORTFOLIO_DATA = {
           "folderName": "게임메카닉스기획서",
           "folderAliases": [
             "게임메카닉스기획서",
+            "게임 메카닉스 기획서",
             "게임메카닉스",
-            "mechanics"
+            "메카닉스",
+            "mechanics",
+            "game-mechanics"
           ],
           "sourceFolders": [
             "./assets/pdf/the-stillborn-age/게임메카닉스기획서"
@@ -1136,9 +1280,13 @@ window.PORTFOLIO_DATA = {
           "folderName": "게임콘텐츠시스템기획서",
           "folderAliases": [
             "게임콘텐츠시스템기획서",
+            "게임 콘텐츠 시스템 기획서",
             "콘텐츠시스템기획서",
+            "콘텐츠 시스템 기획서",
             "콘텐츠시스템",
-            "contents-system"
+            "콘텐츠 시스템",
+            "contents-system",
+            "game-contents-system"
           ],
           "sourceFolders": [
             "./assets/pdf/the-stillborn-age/게임콘텐츠시스템기획서"
@@ -1146,21 +1294,28 @@ window.PORTFOLIO_DATA = {
           "status": "available",
           "primaryFile": {
             "title": "콘텐츠맵2",
-            "fileName": "콘텐츠맵2.svg",
-            "path": "./assets/pdf/the-stillborn-age/게임콘텐츠시스템기획서/콘텐츠맵2.svg",
+            "fileName": "1.콘텐츠맵2.svg",
+            "path": "./assets/pdf/the-stillborn-age/게임콘텐츠시스템기획서/1.콘텐츠맵2.svg",
             "type": "svg",
             "isPrimary": true
           },
           "files": [
             {
               "title": "콘텐츠맵2",
-              "fileName": "콘텐츠맵2.svg",
-              "path": "./assets/pdf/the-stillborn-age/게임콘텐츠시스템기획서/콘텐츠맵2.svg",
+              "fileName": "1.콘텐츠맵2.svg",
+              "path": "./assets/pdf/the-stillborn-age/게임콘텐츠시스템기획서/1.콘텐츠맵2.svg",
               "type": "svg",
               "isPrimary": true
+            },
+            {
+              "title": "TSA_콘텐츠기획",
+              "fileName": "2.TSA_콘텐츠기획.pdf",
+              "path": "./assets/pdf/the-stillborn-age/게임콘텐츠시스템기획서/2.TSA_콘텐츠기획.pdf",
+              "type": "pdf",
+              "isPrimary": false
             }
           ],
-          "fileCount": 1
+          "fileCount": 2
         },
         {
           "no": "07",
@@ -1169,9 +1324,13 @@ window.PORTFOLIO_DATA = {
           "folderName": "레벨디자인기획서",
           "folderAliases": [
             "레벨디자인기획서",
+            "레벨 디자인 기획서",
             "레벨기획서",
+            "레벨 기획서",
             "레벨디자인",
-            "level-design"
+            "레벨 디자인",
+            "level-design",
+            "level"
           ],
           "sourceFolders": [
             "./assets/pdf/the-stillborn-age/레벨기획서"
@@ -1198,9 +1357,30 @@ window.PORTFOLIO_DATA = {
               "path": "./assets/pdf/the-stillborn-age/레벨기획서/2.TSA_전체_레벨_레이아웃.xlsx",
               "type": "spreadsheet",
               "isPrimary": false
+            },
+            {
+              "title": "TSA_02_레벨_디자인_문서",
+              "fileName": "3.TSA_02_레벨_디자인_문서.pdf",
+              "path": "./assets/pdf/the-stillborn-age/레벨기획서/3.TSA_02_레벨_디자인_문서.pdf",
+              "type": "pdf",
+              "isPrimary": false
+            },
+            {
+              "title": "TSA_03_테스트_플레이_시나리오",
+              "fileName": "4.TSA_03_테스트_플레이_시나리오.pdf",
+              "path": "./assets/pdf/the-stillborn-age/레벨기획서/4.TSA_03_테스트_플레이_시나리오.pdf",
+              "type": "pdf",
+              "isPrimary": false
+            },
+            {
+              "title": "TSA_04_레벨_분석서",
+              "fileName": "5.TSA_04_레벨_분석서.pdf",
+              "path": "./assets/pdf/the-stillborn-age/레벨기획서/5.TSA_04_레벨_분석서.pdf",
+              "type": "pdf",
+              "isPrimary": false
             }
           ],
-          "fileCount": 2
+          "fileCount": 5
         },
         {
           "no": "08",
@@ -1209,27 +1389,32 @@ window.PORTFOLIO_DATA = {
           "folderName": "게임UI디자인기획서",
           "folderAliases": [
             "게임UI디자인기획서",
+            "게임 UI 디자인 기획서",
             "게임UI기획서",
+            "게임 UI 기획서",
             "UI디자인기획서",
+            "UI 디자인 기획서",
             "UI기획서",
-            "ui-design"
+            "UI 기획서",
+            "ui-design",
+            "ui"
           ],
           "sourceFolders": [
             "./assets/pdf/the-stillborn-age/게임UI기획서"
           ],
           "status": "available",
           "primaryFile": {
-            "title": "TSA_UI기획",
-            "fileName": "TSA_UI기획.pdf",
-            "path": "./assets/pdf/the-stillborn-age/게임UI기획서/TSA_UI기획.pdf",
+            "title": "TSA_UI기획서",
+            "fileName": "TSA_UI기획서.pdf",
+            "path": "./assets/pdf/the-stillborn-age/게임UI기획서/TSA_UI기획서.pdf",
             "type": "pdf",
             "isPrimary": true
           },
           "files": [
             {
-              "title": "TSA_UI기획",
-              "fileName": "TSA_UI기획.pdf",
-              "path": "./assets/pdf/the-stillborn-age/게임UI기획서/TSA_UI기획.pdf",
+              "title": "TSA_UI기획서",
+              "fileName": "TSA_UI기획서.pdf",
+              "path": "./assets/pdf/the-stillborn-age/게임UI기획서/TSA_UI기획서.pdf",
               "type": "pdf",
               "isPrimary": true
             }
@@ -1243,28 +1428,33 @@ window.PORTFOLIO_DATA = {
           "folderName": "게임서비스기획서",
           "folderAliases": [
             "게임서비스기획서",
+            "게임 서비스 기획서",
             "서비스기획서",
-            "service-plan"
+            "서비스 기획서",
+            "service-plan",
+            "service"
           ],
-          "sourceFolders": [],
-          "status": "coming-soon",
+          "sourceFolders": [
+            "./assets/pdf/the-stillborn-age/게임서비스기획서"
+          ],
+          "status": "available",
           "primaryFile": {
-            "title": "Coming Soon",
-            "fileName": "coming-soon.pdf",
-            "path": "./assets/pdf/_common/coming-soon.pdf",
+            "title": "TSA_서비스기획",
+            "fileName": "TSA_서비스기획.pdf",
+            "path": "./assets/pdf/the-stillborn-age/게임서비스기획서/TSA_서비스기획.pdf",
             "type": "pdf",
-            "isPlaceholder": true
+            "isPrimary": true
           },
           "files": [
             {
-              "title": "Coming Soon",
-              "fileName": "coming-soon.pdf",
-              "path": "./assets/pdf/_common/coming-soon.pdf",
+              "title": "TSA_서비스기획",
+              "fileName": "TSA_서비스기획.pdf",
+              "path": "./assets/pdf/the-stillborn-age/게임서비스기획서/TSA_서비스기획.pdf",
               "type": "pdf",
-              "isPlaceholder": true
+              "isPrimary": true
             }
           ],
-          "fileCount": 0
+          "fileCount": 1
         }
       ],
       "seo": {
@@ -1301,6 +1491,7 @@ window.PORTFOLIO_DATA = {
           "folderName": "개발제안서",
           "folderAliases": [
             "개발제안서",
+            "개발 제안서",
             "proposal"
           ],
           "sourceFolders": [],
@@ -1331,8 +1522,11 @@ window.PORTFOLIO_DATA = {
           "folderAliases": [
             "게임스토리&시나리오",
             "게임스토리&게임시나리오",
+            "게임 스토리&시나리오",
+            "스토리&시나리오",
             "시나리오",
-            "scenario"
+            "scenario",
+            "story-scenario"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -1361,8 +1555,11 @@ window.PORTFOLIO_DATA = {
           "folderName": "캐릭터컨셉기획서",
           "folderAliases": [
             "캐릭터컨셉기획서",
+            "캐릭터 컨셉 기획서",
             "캐릭터컨셉",
-            "character"
+            "캐릭터 컨셉",
+            "character",
+            "character-concept"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -1391,8 +1588,11 @@ window.PORTFOLIO_DATA = {
           "folderName": "배경컨셉기획서",
           "folderAliases": [
             "배경컨셉기획서",
+            "배경 컨셉 기획서",
             "배경컨셉",
-            "background"
+            "배경 컨셉",
+            "background",
+            "background-concept"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -1421,8 +1621,11 @@ window.PORTFOLIO_DATA = {
           "folderName": "게임메카닉스기획서",
           "folderAliases": [
             "게임메카닉스기획서",
+            "게임 메카닉스 기획서",
             "게임메카닉스",
-            "mechanics"
+            "메카닉스",
+            "mechanics",
+            "game-mechanics"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -1451,9 +1654,13 @@ window.PORTFOLIO_DATA = {
           "folderName": "게임콘텐츠시스템기획서",
           "folderAliases": [
             "게임콘텐츠시스템기획서",
+            "게임 콘텐츠 시스템 기획서",
             "콘텐츠시스템기획서",
+            "콘텐츠 시스템 기획서",
             "콘텐츠시스템",
-            "contents-system"
+            "콘텐츠 시스템",
+            "contents-system",
+            "game-contents-system"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -1482,9 +1689,13 @@ window.PORTFOLIO_DATA = {
           "folderName": "레벨디자인기획서",
           "folderAliases": [
             "레벨디자인기획서",
+            "레벨 디자인 기획서",
             "레벨기획서",
+            "레벨 기획서",
             "레벨디자인",
-            "level-design"
+            "레벨 디자인",
+            "level-design",
+            "level"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -1513,10 +1724,15 @@ window.PORTFOLIO_DATA = {
           "folderName": "게임UI디자인기획서",
           "folderAliases": [
             "게임UI디자인기획서",
+            "게임 UI 디자인 기획서",
             "게임UI기획서",
+            "게임 UI 기획서",
             "UI디자인기획서",
+            "UI 디자인 기획서",
             "UI기획서",
-            "ui-design"
+            "UI 기획서",
+            "ui-design",
+            "ui"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -1545,8 +1761,11 @@ window.PORTFOLIO_DATA = {
           "folderName": "게임서비스기획서",
           "folderAliases": [
             "게임서비스기획서",
+            "게임 서비스 기획서",
             "서비스기획서",
-            "service-plan"
+            "서비스 기획서",
+            "service-plan",
+            "service"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -1577,6 +1796,7 @@ window.PORTFOLIO_DATA = {
           "folderName": "개발제안서",
           "folderAliases": [
             "개발제안서",
+            "개발 제안서",
             "proposal"
           ],
           "sourceFolders": [],
@@ -1607,8 +1827,11 @@ window.PORTFOLIO_DATA = {
           "folderAliases": [
             "게임스토리&시나리오",
             "게임스토리&게임시나리오",
+            "게임 스토리&시나리오",
+            "스토리&시나리오",
             "시나리오",
-            "scenario"
+            "scenario",
+            "story-scenario"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -1637,8 +1860,11 @@ window.PORTFOLIO_DATA = {
           "folderName": "캐릭터컨셉기획서",
           "folderAliases": [
             "캐릭터컨셉기획서",
+            "캐릭터 컨셉 기획서",
             "캐릭터컨셉",
-            "character"
+            "캐릭터 컨셉",
+            "character",
+            "character-concept"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -1667,8 +1893,11 @@ window.PORTFOLIO_DATA = {
           "folderName": "배경컨셉기획서",
           "folderAliases": [
             "배경컨셉기획서",
+            "배경 컨셉 기획서",
             "배경컨셉",
-            "background"
+            "배경 컨셉",
+            "background",
+            "background-concept"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -1697,8 +1926,11 @@ window.PORTFOLIO_DATA = {
           "folderName": "게임메카닉스기획서",
           "folderAliases": [
             "게임메카닉스기획서",
+            "게임 메카닉스 기획서",
             "게임메카닉스",
-            "mechanics"
+            "메카닉스",
+            "mechanics",
+            "game-mechanics"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -1727,9 +1959,13 @@ window.PORTFOLIO_DATA = {
           "folderName": "게임콘텐츠시스템기획서",
           "folderAliases": [
             "게임콘텐츠시스템기획서",
+            "게임 콘텐츠 시스템 기획서",
             "콘텐츠시스템기획서",
+            "콘텐츠 시스템 기획서",
             "콘텐츠시스템",
-            "contents-system"
+            "콘텐츠 시스템",
+            "contents-system",
+            "game-contents-system"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -1758,9 +1994,13 @@ window.PORTFOLIO_DATA = {
           "folderName": "레벨디자인기획서",
           "folderAliases": [
             "레벨디자인기획서",
+            "레벨 디자인 기획서",
             "레벨기획서",
+            "레벨 기획서",
             "레벨디자인",
-            "level-design"
+            "레벨 디자인",
+            "level-design",
+            "level"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -1789,10 +2029,15 @@ window.PORTFOLIO_DATA = {
           "folderName": "게임UI디자인기획서",
           "folderAliases": [
             "게임UI디자인기획서",
+            "게임 UI 디자인 기획서",
             "게임UI기획서",
+            "게임 UI 기획서",
             "UI디자인기획서",
+            "UI 디자인 기획서",
             "UI기획서",
-            "ui-design"
+            "UI 기획서",
+            "ui-design",
+            "ui"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -1821,8 +2066,11 @@ window.PORTFOLIO_DATA = {
           "folderName": "게임서비스기획서",
           "folderAliases": [
             "게임서비스기획서",
+            "게임 서비스 기획서",
             "서비스기획서",
-            "service-plan"
+            "서비스 기획서",
+            "service-plan",
+            "service"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
