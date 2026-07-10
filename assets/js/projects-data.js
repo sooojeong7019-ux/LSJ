@@ -1,6 +1,6 @@
 /* projects-data.js
    폴더 기반 문서 라이브러리 데이터입니다.
-   - 실제 assets/pdf 및 assets/documents 폴더를 다시 스캔해 반영했습니다.
+   - 업로드된 assets/pdf 및 assets/documents 폴더를 다시 스캔해 반영했습니다.
    - 빈 폴더는 공통 Coming Soon PDF로 연결합니다.
    - 여러 파일이 있으면 파일명 앞 번호 기준으로 정렬하고, 1번 파일을 대표 미리보기로 사용합니다.
    - 단일 파일은 그대로 대표 파일로 사용합니다.
@@ -58,7 +58,8 @@ window.PORTFOLIO_DATA = {
           "folderAliases": [
             "개발제안서",
             "개발 제안서",
-            "proposal"
+            "proposal",
+            "game-proposal"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -89,10 +90,13 @@ window.PORTFOLIO_DATA = {
             "게임스토리&시나리오",
             "게임스토리&게임시나리오",
             "게임 스토리&시나리오",
+            "게임 스토리 시나리오",
             "스토리&시나리오",
+            "스토리시나리오",
             "시나리오",
             "scenario",
-            "story-scenario"
+            "story-scenario",
+            "story"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -225,8 +229,11 @@ window.PORTFOLIO_DATA = {
             "콘텐츠 시스템 기획서",
             "콘텐츠시스템",
             "콘텐츠 시스템",
+            "콘텐츠기획",
+            "콘텐츠 기획",
             "contents-system",
-            "game-contents-system"
+            "game-contents-system",
+            "contents"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -363,7 +370,8 @@ window.PORTFOLIO_DATA = {
           "folderAliases": [
             "개발제안서",
             "개발 제안서",
-            "proposal"
+            "proposal",
+            "game-proposal"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -394,10 +402,13 @@ window.PORTFOLIO_DATA = {
             "게임스토리&시나리오",
             "게임스토리&게임시나리오",
             "게임 스토리&시나리오",
+            "게임 스토리 시나리오",
             "스토리&시나리오",
+            "스토리시나리오",
             "시나리오",
             "scenario",
-            "story-scenario"
+            "story-scenario",
+            "story"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -530,8 +541,11 @@ window.PORTFOLIO_DATA = {
             "콘텐츠 시스템 기획서",
             "콘텐츠시스템",
             "콘텐츠 시스템",
+            "콘텐츠기획",
+            "콘텐츠 기획",
             "contents-system",
-            "game-contents-system"
+            "game-contents-system",
+            "contents"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -694,50 +708,44 @@ window.PORTFOLIO_DATA = {
           "folderAliases": [
             "개발제안서",
             "개발 제안서",
-            "proposal"
+            "proposal",
+            "game-proposal"
           ],
           "sourceFolders": [
             "./assets/pdf/the-stillborn-age/개발제안서"
           ],
           "status": "available",
           "primaryFile": {
-            "title": "TSA_개발제안서_PPT",
-            "fileName": "1.TSA_개발제안서_PPT.pdf",
-            "path": "./assets/pdf/the-stillborn-age/개발제안서/1.TSA_개발제안서_PPT.pdf",
+            "title": "TSA_개발제안서",
+            "fileName": "1.TSA_개발제안서.pdf",
+            "path": "./assets/pdf/the-stillborn-age/개발제안서/1.TSA_개발제안서.pdf",
             "type": "pdf",
             "isPrimary": true
           },
           "files": [
             {
-              "title": "TSA_개발제안서_PPT",
-              "fileName": "1.TSA_개발제안서_PPT.pdf",
-              "path": "./assets/pdf/the-stillborn-age/개발제안서/1.TSA_개발제안서_PPT.pdf",
+              "title": "TSA_개발제안서",
+              "fileName": "1.TSA_개발제안서.pdf",
+              "path": "./assets/pdf/the-stillborn-age/개발제안서/1.TSA_개발제안서.pdf",
               "type": "pdf",
               "isPrimary": true
             },
             {
-              "title": "TSA_개발제안서",
-              "fileName": "2.TSA_개발제안서.pdf",
-              "path": "./assets/pdf/the-stillborn-age/개발제안서/2.TSA_개발제안서.pdf",
-              "type": "pdf",
-              "isPrimary": false
-            },
-            {
               "title": "The Stillborn Age 게임 소개",
-              "fileName": "3.The Stillborn Age 게임 소개.pdf",
-              "path": "./assets/pdf/the-stillborn-age/개발제안서/3.The Stillborn Age 게임 소개.pdf",
+              "fileName": "2.The Stillborn Age 게임 소개.pdf",
+              "path": "./assets/pdf/the-stillborn-age/개발제안서/2.The Stillborn Age 게임 소개.pdf",
               "type": "pdf",
               "isPrimary": false
             },
             {
-              "title": "원페이지 기획서",
-              "fileName": "4.원페이지 기획서.svg",
-              "path": "./assets/pdf/the-stillborn-age/개발제안서/4.원페이지 기획서.svg",
+              "title": "원페이지기획",
+              "fileName": "3.원페이지기획.svg",
+              "path": "./assets/pdf/the-stillborn-age/개발제안서/3.원페이지기획.svg",
               "type": "svg",
               "isPrimary": false
             }
           ],
-          "fileCount": 4
+          "fileCount": 3
         },
         {
           "no": "02",
@@ -748,10 +756,13 @@ window.PORTFOLIO_DATA = {
             "게임스토리&시나리오",
             "게임스토리&게임시나리오",
             "게임 스토리&시나리오",
+            "게임 스토리 시나리오",
             "스토리&시나리오",
+            "스토리시나리오",
             "시나리오",
             "scenario",
-            "story-scenario"
+            "story-scenario",
+            "story"
           ],
           "sourceFolders": [
             "./assets/pdf/the-stillborn-age/게임스토리&시나리오"
@@ -899,8 +910,11 @@ window.PORTFOLIO_DATA = {
             "콘텐츠 시스템 기획서",
             "콘텐츠시스템",
             "콘텐츠 시스템",
+            "콘텐츠기획",
+            "콘텐츠 기획",
             "contents-system",
-            "game-contents-system"
+            "game-contents-system",
+            "contents"
           ],
           "sourceFolders": [
             "./assets/pdf/the-stillborn-age/게임콘텐츠시스템기획서"
@@ -1053,22 +1067,36 @@ window.PORTFOLIO_DATA = {
           ],
           "status": "available",
           "primaryFile": {
-            "title": "TSA_서비스기획",
-            "fileName": "TSA_서비스기획.pdf",
-            "path": "./assets/pdf/the-stillborn-age/게임서비스기획서/TSA_서비스기획.pdf",
+            "title": "TSA_01_MM기반_마일스톤",
+            "fileName": "1.TSA_01_MM기반_마일스톤.pdf",
+            "path": "./assets/pdf/the-stillborn-age/게임서비스기획서/1.TSA_01_MM기반_마일스톤.pdf",
             "type": "pdf",
             "isPrimary": true
           },
           "files": [
             {
-              "title": "TSA_서비스기획",
-              "fileName": "TSA_서비스기획.pdf",
-              "path": "./assets/pdf/the-stillborn-age/게임서비스기획서/TSA_서비스기획.pdf",
+              "title": "TSA_01_MM기반_마일스톤",
+              "fileName": "1.TSA_01_MM기반_마일스톤.pdf",
+              "path": "./assets/pdf/the-stillborn-age/게임서비스기획서/1.TSA_01_MM기반_마일스톤.pdf",
               "type": "pdf",
               "isPrimary": true
+            },
+            {
+              "title": "TSA_02_서비스플랫폼_입점제안서",
+              "fileName": "2.TSA_02_서비스플랫폼_입점제안서.pdf",
+              "path": "./assets/pdf/the-stillborn-age/게임서비스기획서/2.TSA_02_서비스플랫폼_입점제안서.pdf",
+              "type": "pdf",
+              "isPrimary": false
+            },
+            {
+              "title": "TSA_03_서비스지표_기획서",
+              "fileName": "3.TSA_03_서비스지표_기획서.pdf",
+              "path": "./assets/pdf/the-stillborn-age/게임서비스기획서/3.TSA_03_서비스지표_기획서.pdf",
+              "type": "pdf",
+              "isPrimary": false
             }
           ],
-          "fileCount": 1
+          "fileCount": 3
         }
       ],
       "documents": [
@@ -1080,50 +1108,44 @@ window.PORTFOLIO_DATA = {
           "folderAliases": [
             "개발제안서",
             "개발 제안서",
-            "proposal"
+            "proposal",
+            "game-proposal"
           ],
           "sourceFolders": [
             "./assets/pdf/the-stillborn-age/개발제안서"
           ],
           "status": "available",
           "primaryFile": {
-            "title": "TSA_개발제안서_PPT",
-            "fileName": "1.TSA_개발제안서_PPT.pdf",
-            "path": "./assets/pdf/the-stillborn-age/개발제안서/1.TSA_개발제안서_PPT.pdf",
+            "title": "TSA_개발제안서",
+            "fileName": "1.TSA_개발제안서.pdf",
+            "path": "./assets/pdf/the-stillborn-age/개발제안서/1.TSA_개발제안서.pdf",
             "type": "pdf",
             "isPrimary": true
           },
           "files": [
             {
-              "title": "TSA_개발제안서_PPT",
-              "fileName": "1.TSA_개발제안서_PPT.pdf",
-              "path": "./assets/pdf/the-stillborn-age/개발제안서/1.TSA_개발제안서_PPT.pdf",
+              "title": "TSA_개발제안서",
+              "fileName": "1.TSA_개발제안서.pdf",
+              "path": "./assets/pdf/the-stillborn-age/개발제안서/1.TSA_개발제안서.pdf",
               "type": "pdf",
               "isPrimary": true
             },
             {
-              "title": "TSA_개발제안서",
-              "fileName": "2.TSA_개발제안서.pdf",
-              "path": "./assets/pdf/the-stillborn-age/개발제안서/2.TSA_개발제안서.pdf",
-              "type": "pdf",
-              "isPrimary": false
-            },
-            {
               "title": "The Stillborn Age 게임 소개",
-              "fileName": "3.The Stillborn Age 게임 소개.pdf",
-              "path": "./assets/pdf/the-stillborn-age/개발제안서/3.The Stillborn Age 게임 소개.pdf",
+              "fileName": "2.The Stillborn Age 게임 소개.pdf",
+              "path": "./assets/pdf/the-stillborn-age/개발제안서/2.The Stillborn Age 게임 소개.pdf",
               "type": "pdf",
               "isPrimary": false
             },
             {
-              "title": "원페이지 기획서",
-              "fileName": "4.원페이지 기획서.svg",
-              "path": "./assets/pdf/the-stillborn-age/개발제안서/4.원페이지 기획서.svg",
+              "title": "원페이지기획",
+              "fileName": "3.원페이지기획.svg",
+              "path": "./assets/pdf/the-stillborn-age/개발제안서/3.원페이지기획.svg",
               "type": "svg",
               "isPrimary": false
             }
           ],
-          "fileCount": 4
+          "fileCount": 3
         },
         {
           "no": "02",
@@ -1134,10 +1156,13 @@ window.PORTFOLIO_DATA = {
             "게임스토리&시나리오",
             "게임스토리&게임시나리오",
             "게임 스토리&시나리오",
+            "게임 스토리 시나리오",
             "스토리&시나리오",
+            "스토리시나리오",
             "시나리오",
             "scenario",
-            "story-scenario"
+            "story-scenario",
+            "story"
           ],
           "sourceFolders": [
             "./assets/pdf/the-stillborn-age/게임스토리&시나리오"
@@ -1285,8 +1310,11 @@ window.PORTFOLIO_DATA = {
             "콘텐츠 시스템 기획서",
             "콘텐츠시스템",
             "콘텐츠 시스템",
+            "콘텐츠기획",
+            "콘텐츠 기획",
             "contents-system",
-            "game-contents-system"
+            "game-contents-system",
+            "contents"
           ],
           "sourceFolders": [
             "./assets/pdf/the-stillborn-age/게임콘텐츠시스템기획서"
@@ -1439,22 +1467,36 @@ window.PORTFOLIO_DATA = {
           ],
           "status": "available",
           "primaryFile": {
-            "title": "TSA_서비스기획",
-            "fileName": "TSA_서비스기획.pdf",
-            "path": "./assets/pdf/the-stillborn-age/게임서비스기획서/TSA_서비스기획.pdf",
+            "title": "TSA_01_MM기반_마일스톤",
+            "fileName": "1.TSA_01_MM기반_마일스톤.pdf",
+            "path": "./assets/pdf/the-stillborn-age/게임서비스기획서/1.TSA_01_MM기반_마일스톤.pdf",
             "type": "pdf",
             "isPrimary": true
           },
           "files": [
             {
-              "title": "TSA_서비스기획",
-              "fileName": "TSA_서비스기획.pdf",
-              "path": "./assets/pdf/the-stillborn-age/게임서비스기획서/TSA_서비스기획.pdf",
+              "title": "TSA_01_MM기반_마일스톤",
+              "fileName": "1.TSA_01_MM기반_마일스톤.pdf",
+              "path": "./assets/pdf/the-stillborn-age/게임서비스기획서/1.TSA_01_MM기반_마일스톤.pdf",
               "type": "pdf",
               "isPrimary": true
+            },
+            {
+              "title": "TSA_02_서비스플랫폼_입점제안서",
+              "fileName": "2.TSA_02_서비스플랫폼_입점제안서.pdf",
+              "path": "./assets/pdf/the-stillborn-age/게임서비스기획서/2.TSA_02_서비스플랫폼_입점제안서.pdf",
+              "type": "pdf",
+              "isPrimary": false
+            },
+            {
+              "title": "TSA_03_서비스지표_기획서",
+              "fileName": "3.TSA_03_서비스지표_기획서.pdf",
+              "path": "./assets/pdf/the-stillborn-age/게임서비스기획서/3.TSA_03_서비스지표_기획서.pdf",
+              "type": "pdf",
+              "isPrimary": false
             }
           ],
-          "fileCount": 1
+          "fileCount": 3
         }
       ],
       "seo": {
@@ -1492,7 +1534,8 @@ window.PORTFOLIO_DATA = {
           "folderAliases": [
             "개발제안서",
             "개발 제안서",
-            "proposal"
+            "proposal",
+            "game-proposal"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -1523,10 +1566,13 @@ window.PORTFOLIO_DATA = {
             "게임스토리&시나리오",
             "게임스토리&게임시나리오",
             "게임 스토리&시나리오",
+            "게임 스토리 시나리오",
             "스토리&시나리오",
+            "스토리시나리오",
             "시나리오",
             "scenario",
-            "story-scenario"
+            "story-scenario",
+            "story"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -1659,8 +1705,11 @@ window.PORTFOLIO_DATA = {
             "콘텐츠 시스템 기획서",
             "콘텐츠시스템",
             "콘텐츠 시스템",
+            "콘텐츠기획",
+            "콘텐츠 기획",
             "contents-system",
-            "game-contents-system"
+            "game-contents-system",
+            "contents"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -1797,7 +1846,8 @@ window.PORTFOLIO_DATA = {
           "folderAliases": [
             "개발제안서",
             "개발 제안서",
-            "proposal"
+            "proposal",
+            "game-proposal"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -1828,10 +1878,13 @@ window.PORTFOLIO_DATA = {
             "게임스토리&시나리오",
             "게임스토리&게임시나리오",
             "게임 스토리&시나리오",
+            "게임 스토리 시나리오",
             "스토리&시나리오",
+            "스토리시나리오",
             "시나리오",
             "scenario",
-            "story-scenario"
+            "story-scenario",
+            "story"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
@@ -1964,8 +2017,11 @@ window.PORTFOLIO_DATA = {
             "콘텐츠 시스템 기획서",
             "콘텐츠시스템",
             "콘텐츠 시스템",
+            "콘텐츠기획",
+            "콘텐츠 기획",
             "contents-system",
-            "game-contents-system"
+            "game-contents-system",
+            "contents"
           ],
           "sourceFolders": [],
           "status": "coming-soon",
